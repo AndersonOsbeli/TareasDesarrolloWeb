@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Navegación</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <!-- Barra de navegación principal -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo o nombre del sitio -->
+            <div class="nav-logo">
+                <a href="#inicio">Menu de navegacion</a>
+            </div>
+            
+            <!-- Menú de navegación -->
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#inicio" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#sobre-mi" class="nav-link">Sobre mí</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contacto" class="nav-link">Contacto</a>
+                </li>
+            </ul>
+            
+            <!-- Botón hamburguesa para móviles -->
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal de ejemplo -->
+    <main class="main-content">
+        <section id="inicio" class="section">
+            <div class="container">
+                <h1>Inicio</h1>
+                <p>Esta es la sección de inicio. Aquí puedes agregar contenido sobre tu página principal.</p>
+            </div>
+        </section>
+
+        <section id="sobre-mi" class="section">
+            <div class="container">
+                <h2>Sobre Mí</h2>
+                <p>Esta es la sección sobre mí. Aquí puedes contar tu historia, experiencia y habilidades.</p>
+            </div>
+        </section>
+
+        <section id="contacto" class="section">
+            <div class="container">
+                <h2>Contacto</h2>
+                <p>Esta es la sección de contacto. Aquí puedes agregar tu información de contacto o un formulario.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- JavaScript para el menú móvil -->
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenu.addEventListener('click', function() {
+            mobileMenu.classList.toggle('is-active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Cerrar menú al hacer clic en un enlace (móvil)
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            mobileMenu.classList.remove('is-active');
+            navMenu.classList.remove('active');
+        }));
+    </script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+/*Configuracion basica */
+
+*body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*estilo del body */
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f0f0f0, #667eea, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/*header del formulario*/
+.form-header{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-header h1 {
+    color: #333;
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.form-header p {
+    color: #666;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+/*grupos de formulario*/
+.form-group {
+    margin-bottom: 25px;
+}
+
+/*etiquetas*/
+label{
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.required{
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/*campos de entrada*/
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+    transition: all 0.3 ease;
+    background-color: #fafafa;
+}
+
+/*estado focus*/
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus{
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    background-color: white;
+    transform: translate(-1px);
+}
+
+/*validacion visual*/
+input:valid {
+    border-color: #28a745;
+}
+
+input:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: #dc3545;
+}
+
+/*textura especifica*/
+textarea {
+    resize: vertical;
+    min-height: 80px;
+    font-family: inherit;
+    line-height: 1.5;
+}
+
+/*boton enviar*/
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #0830e5 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+}
+
+/* ===== RESPONSIVIDAD ===== */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 25px;
+        margin: 10px;
+    }
+    
+    .form-header h1 {
+        font-size: 1.8em;
+    }
+    
+    .form-header p {
+        font-size: 1em;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        padding: 12px;
+        font-size: 16px;
+    }
+    
+    .submit-btn {
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        padding: 20px;
+    }
+    
+    .form-header h1 {
+        font-size: 1.6em;
+    }
+    
+    .submit-btn {
+        font-size: 14px;
+    }
+}
+
+/* ===== ANIMACIONES ADICIONALES ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* ===== MEJORAS DE ACCESIBILIDAD ===== */
+input:focus,
+textarea:focus,
+button:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* ===== PLACEHOLDER PERSONALIZADO ===== */
+input::placeholder,
+textarea::placeholder {
+    color: #999;
+    opacity: 1;
+    font-style: italic;
+}
