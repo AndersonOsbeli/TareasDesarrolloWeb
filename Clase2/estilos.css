@@ -1,0 +1,230 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/*para el logo de la pagina*/
+.navbar {
+  height: 53px;    
+  background: linear-gradient(to right,#00897b, #c62828, #fbc02d);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  justify-content: space-between;
+}
+
+/*alineacion del titulo y subtitulo*/
+main{
+   
+    text-align: center;
+   
+}
+
+
+.foto{
+  display: block; 
+  margin: 0 auto;
+  align-items: center;   
+  width: 600px;
+  height: 300px;
+  object-fit: cover;
+  margin-bottom: 18px;
+  border: 5px solid #2db028;
+  gap: 20px;
+}
+
+.texto{
+  max-width: 800px;
+  margin: 0 auto;
+  text-align:justify;
+}
+
+/*codigo del menu hamburguesa*/
+.logo {
+  flex: 1;
+  font-size: 1.5rem;
+  font-weight: bold;
+  
+ 
+}
+
+.hamburger {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5 rem;
+  margin: 0;
+  padding: 0;
+
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: #11851b;
+  width: 200px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  padding: 1 rem;
+}
+
+.nav-links.active{
+    display: flex;
+}
+
+.nav-links li a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: block;
+  transition: background 0.2s;
+}
+
+.nav-links li a:hover {
+  background: #004d40;
+  border-radius: 4px;
+}
+
+/* Responsive */
+/*@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #00695c;
+    position: absolute;
+    top: 60px;
+    left: 0;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .hamburger {
+    display: block;
+  }
+}*/
+
+
+/******* ESTILO DE LUGARES *******/
+.contenido-sitio {
+ display: flex;
+  flex-direction: column; /* ¡Esto pone todo en columna! */
+  align-items: center;    /* Centra horizontalmente */
+  gap: 1.5rem;            /* Espacio entre elementos */
+  margin: 2rem auto;
+  max-width: 2000px;
+  padding: 1rem;
+}
+
+.imagen-sitio {
+  width: 500px; /* Más pequeña */
+  max-width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.titulo_sitio h1 {
+  font-size: 2.5rem; /* Título más grande */
+  color: #00695c;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 700px) {
+  .contenido-sitio {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .imagen-sitio {
+    width: 250px;
+    margin-bottom: 1rem;
+  }
+  .texto-sitio {
+    text-align: justify;
+    line-height: 1.7;
+    font-size: 1.1rem;
+  }
+}
+
+/*ubicacion en el mapa*/
+.ubicacion {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #333;
+}
+.ubicacion strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 1.2rem;
+  color: #00695c;
+}
+
+/*Diseño de actividades*/
+.actividades {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #f1f8e9;
+  border-radius: 10px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.actividades h2 {
+  color: #388e3c;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.actividades ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  font-size: 1.1rem;
+  color: #333;
+  text-align: left;
+}
+
+
+/*BOTON VOLVER AL MENU*/
+.btn-volver-navbar {
+  background: #41ac2e;
+  color: #fafefe;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  transition: background 0.2s, color 0.2s;
+  border: 2px solid #690000;
+  display: flex;
+  align-items: center;
+  height: 2.2rem;
+}
+
+.btn-volver-navbar:hover {
+  background: #00695c;
+  color: #45c222;
+}
+
+/* Responsive: en pantallas pequeñas, el botón se puede ocultar o ajustar */
+@media (max-width: 768px) {
+  .btn-volver-navbar {
+    font-size: 0.95rem;
+    padding: 0.3rem 0.7rem;
+    height: auto;
+  }
+}
