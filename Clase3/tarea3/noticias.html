@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coca-Cola - Noticias</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .noticia {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin: 2rem auto;
+            max-width: 700px;
+            padding: 1.5rem;
+            text-align: left;
+        }
+        .noticia img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 8px;
+            float: right;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .noticia h3 {
+            color: #dc143c;
+            margin-top: 0;
+        }
+        .noticia .resumen {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        .noticia .completo {
+            display: none;
+            margin-top: 1rem;
+        }
+        .btn-leer {
+            background: #dc143c;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 0.5rem 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: background 0.2s;
+        }
+        .btn-leer:hover {
+            background: #b71c1c;
+        }
+        @media (max-width: 600px) {
+            .noticia img {
+                float: none;
+                display: block;
+                margin: 0 auto 1rem auto;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="contacto.html">Contáctanos</a></li>
+                <li><a href="responsabilidad.html">Responsabilidad Social</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="banner">
+            <h1>Noticias Coca-Cola</h1>
+        </section>
+
+        <section>
+            <!-- Noticia 1 -->
+            <div class="noticia">
+                <img src="c:\Users\osbel\Desktop\TareaDesarrolloWeb\TareasDesarrolloWeb\Clase3\tarea3\imagenes\OIP (1).webp" alt="Nueva Coca-Cola Sin Azúcar"style="width: 300px; height: 200px; object-fit: cover;">
+                <h3>Nueva Coca-Cola Sin Azúcar llega a Guatemala</h3>
+                <div class="resumen">
+                    Coca-Cola lanza su nueva fórmula sin azúcar, con el mismo sabor refrescante de siempre. Descubre por qué todos están hablando de este lanzamiento.
+                </div>
+                <button class="btn-leer" onclick="toggleNoticia(1)">Leer más</button>
+                <div class="completo" id="noticia-1">
+                    <p>
+                        La nueva Coca-Cola Sin Azúcar ha sido desarrollada para quienes buscan disfrutar del sabor clásico de Coca-Cola, pero sin calorías ni azúcar. El lanzamiento incluye una campaña nacional y degustaciones en supermercados. ¡Pruébala y cuéntanos qué te parece!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Noticia 2 -->
+            <div class="noticia">
+                <img src="c:\Users\osbel\Desktop\TareaDesarrolloWeb\TareasDesarrolloWeb\Clase3\tarea3\imagenes\coca-cola-reciclaje.jpg" alt="Campaña de reciclaje">
+                <h3>Coca-Cola impulsa campaña de reciclaje en Centroamérica</h3>
+                <div class="resumen">
+                    La compañía refuerza su compromiso ambiental con una nueva campaña de reciclaje, invitando a todos a sumarse y cuidar el planeta.
+                </div>
+                <button class="btn-leer" onclick="toggleNoticia(2)">Leer más</button>
+                <div class="completo" id="noticia-2">
+                    <p>
+                        Coca-Cola ha instalado más de 500 puntos de reciclaje en Guatemala, El Salvador y Honduras. Además, se realizarán talleres educativos en escuelas y comunidades para fomentar la cultura del reciclaje y la economía circular.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Noticia 3 -->
+            <div class="noticia">
+                <img src="c:\Users\osbel\Desktop\TareaDesarrolloWeb\TareasDesarrolloWeb\Clase3\tarea3\imagenes\f2db0e32b3a60b1d351bdd5ea012799e.jpg" alt="Powerade para deportistas"style="width: 300px; height: 200px; object-fit: cover;">
+                <h3>Powerade lanza nueva fórmula con más electrolitos</h3>
+                <div class="resumen">
+                    Powerade, la bebida deportiva de Coca-Cola, ahora contiene más electrolitos para una mejor hidratación durante el ejercicio.
+                </div>
+                <button class="btn-leer" onclick="toggleNoticia(3)">Leer más</button>
+                <div class="completo" id="noticia-3">
+                    <p>
+                        La nueva fórmula de Powerade ha sido desarrollada junto a expertos en nutrición deportiva. Disponible en todos los supermercados y tiendas de conveniencia del país. ¡Ideal para deportistas y personas activas!
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2024 The Coca-Cola Company. Todos los derechos reservados.
+    </footer>
+
+    <script>
+        function toggleNoticia(num) {
+            var contenido = document.getElementById('noticia-' + num);
+            var btn = contenido.previousElementSibling;
+            if (contenido.style.display === 'block') {
+                contenido.style.display = 'none';
+                btn.textContent = 'Leer más';
+            } else {
+                contenido.style.display = 'block';
+                btn.textContent = 'Leer menos';
+            }
+        }
+    </script>
+</body>
+</html>

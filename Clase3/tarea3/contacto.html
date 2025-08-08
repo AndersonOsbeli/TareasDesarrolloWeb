@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coca-Cola - Contáctanos</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .formulario-contacto {
+            max-width: 500px;
+            margin: 2rem auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 2rem;
+        }
+        .formulario-contacto label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #dc143c;
+            font-weight: bold;
+        }
+        .formulario-contacto input,
+        .formulario-contacto textarea {
+            width: 100%;
+            padding: 0.7rem;
+            margin-bottom: 1rem;
+            border: 1.5px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .formulario-contacto textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .formulario-contacto .error {
+            color: #dc143c;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+        .formulario-contacto button {
+            background: #dc143c;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 0.7rem 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background 0.2s;
+        }
+        .formulario-contacto button:hover {
+            background: #b71c1c;
+        }
+        .mapa {
+            max-width: 500px;
+            margin: 2rem auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="contacto.html">Contáctanos</a></li>
+                <li><a href="responsabilidad.html">Responsabilidad Social</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="banner">
+            <h1>Contáctanos</h1>
+        </section>
+
+        <section>
+            <form class="formulario-contacto" id="contactForm" autocomplete="off" onsubmit="return validarFormulario();">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" id="correo" name="correo" required>
+
+                <label for="asunto">Asunto:</label>
+                <input type="text" id="asunto" name="asunto" required>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+
+                <div class="error" id="formError"></div>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <section class="mapa">
+            <iframe
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-90.515%2C14.634%2C-90.505%2C14.644&amp;layer=mapnik"
+                style="width:100%; height:300px; border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Ubicación Coca-Cola Guatemala"
+            ></iframe>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2024 The Coca-Cola Company. Todos los derechos reservados.
+    </footer>
+
+    <script>
+        function validarFormulario() {
+            var nombre = document.getElementById('nombre').value.trim();
+            var correo = document.getElementById('correo').value.trim();
+            var asunto = document.getElementById('asunto').value.trim();
+            var mensaje = document.getElementById('mensaje').value.trim();
+            var errorDiv = document.getElementById('formError');
+            errorDiv.textContent = '';
+
+            // Validación básica
+            if (nombre.length < 2) {
+                errorDiv.textContent = 'Por favor, ingresa tu nombre completo.';
+                return false;
+            }
+            if (!/^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$/.test(correo)) {
+                errorDiv.textContent = 'Por favor, ingresa un correo electrónico válido.';
+                return false;
+            }
+            if (asunto.length < 3) {
+                errorDiv.textContent = 'Por favor, ingresa un asunto válido.';
+                return false;
+            }
+            if (mensaje.length < 10) {
+                errorDiv.textContent = 'El mensaje debe tener al menos 10 caracteres.';
+                return false;
+            }
+
+            // Si todo está bien, muestra mensaje de éxito y limpia el formulario
+            alert('¡Gracias por contactarnos! Pronto te responderemos.');
+            document.getElementById('contactForm').reset();
+            return false; // Evita el envío real del formulario
+        }
+    </script>
+</body>
+</html>
