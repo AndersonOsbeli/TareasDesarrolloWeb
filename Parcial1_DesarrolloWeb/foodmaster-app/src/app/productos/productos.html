@@ -1,0 +1,17 @@
+<h2 style="text-align:center; margin: 20px 0;">Productos disponibles</h2>
+
+<div class="grid">
+  <mat-card *ngFor="let p of productos" class="producto-card">
+    <img mat-card-image [src]="p.imagen" [alt]="p.nombre">
+    <mat-card-content>
+      <h3>{{ p.nombre }}</h3>
+      <p>{{ p.descripcion }}</p>
+      <p><strong>Q{{ p.precio }}</strong></p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="agregarAlCarrito(p)">
+        Agregar al carrito
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
