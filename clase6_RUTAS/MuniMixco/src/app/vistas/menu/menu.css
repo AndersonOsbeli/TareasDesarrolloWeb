@@ -1,0 +1,40 @@
+/* Barra fija arriba */
+.topbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  height: 72px;             /* si cambias esto, ajusta el margin-top del main */
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+}
+
+/* Marca del sitio */
+.brand {
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+/* Empuja los enlaces a la derecha */
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Enlaces del menú */
+.menu-link {
+  color: inherit;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Iconos junto al texto */
+.menu-link mat-icon {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Estado activo */
+a.active {
+  text-decoration: underline;
+}
