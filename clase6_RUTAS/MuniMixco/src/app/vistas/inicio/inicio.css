@@ -1,33 +1,10 @@
-/* Alto del menú fijo (ajústalo si tu toolbar mide distinto) */
-:root { --menu-h: 72px; }
-
-/* El componente ocupa toda la pantalla y crea un contexto */
-:host{
-  display: block;
-  min-height: 100dvh;
-  position: relative;
-}
-
-/* La imagen cubre la pantalla visible, sin tapar clics ni el menú */
-.bg{
-  position: fixed;
-  top: var(--menu-h);
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  width: 100%;
-  height: calc(100dvh - var(--menu-h));
-  object-fit: cover;
-
-  pointer-events: none;   /* no bloquea clics */
-  /* ¡Sin z-index negativo! Así no se va detrás del fondo del body */
-}
-
-/* Tu contenido va por encima */
-.contenido{
-  position: relative;
-  z-index: 1;
-  padding: 16px;
-  color: #000000;           /* si tu imagen es oscura */
+.page {
+  min-height: 100vh;                 /* ocupa toda la pantalla */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;                      /* texto blanco encima */
+  background: url('/mixco.jpg') no-repeat center center / cover;
 }

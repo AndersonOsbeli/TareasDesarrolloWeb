@@ -11,6 +11,4 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './menu.html',
   styleUrl: './menu.css',
 })
-export class Menu {
-  constructor(public router: Router) {}
-}
+export class Menu {}
